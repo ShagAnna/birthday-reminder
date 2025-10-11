@@ -1,0 +1,25 @@
+<div class="reminder-list-container">
+  <h2>Saved Reminders</h2>
+  <div *ngIf="reminders.length; else empty" class="reminder-list">
+    <div *ngFor="let r of reminders" class="reminder-card">
+      <div class="photo-circle">
+        <ng-container *ngIf="r.photoUrl; else defaultIcon">
+          <img [src]="r.photoUrl" class="photo" alt="Photo">
+        </ng-container>
+        <ng-template #defaultIcon>
+          <mat-icon style="font-size: 36px; color: #555;">person</mat-icon>
+        </ng-template>
+      </div>
+      <div class="reminder-info">
+        <strong>{{ r.name }}</strong>
+        <div>{{ r.birthday | date }}</div>
+      </div>
+    </div>
+    <button mat-raised-button color="primary" class="back-button" (click)="goBack()">
+      Back
+    </button>
+  </div>
+  <ng-template #empty>
+    <p>No reminders saved.</p>
+  </ng-template>
+</div>

@@ -1,7 +1,14 @@
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { bootstrapApplication } from '@angular/platform-browser';
+import { AppComponent } from './app/app.component';
+import { provideRouter } from '@angular/router';
+import { CreateReminderComponent } from './app/create-reminder/create-reminder.component';
+import { ReminderListComponent } from './app/reminder-list/reminder-list.component';
 
-import { AppModule } from './app/app.module';
+const routes = [
+  { path: '', component: CreateReminderComponent },
+  { path: 'reminders', component: ReminderListComponent },
+];
 
-
-platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.error(err));
+bootstrapApplication(AppComponent, {
+  providers: [provideRouter(routes)],
+});
