@@ -31,7 +31,18 @@ export class ReminderListComponent {
     });
   }
 
+  removeReminder(reminder: any) {
+    if (confirm(`Remove reminder for ${reminder.name}?`)) {
+      this.reminders = this.reminders.filter((r) => r !== reminder);
+      localStorage.setItem('reminders', JSON.stringify(this.reminders));
+    }
+  }
+
   goBack() {
     this.router.navigate(['/']);
+  }
+
+  goToWishes() {
+    this.router.navigate(['/wishes']);
   }
 }

@@ -14,9 +14,16 @@
         <strong>{{ r.name }}</strong>
         <div>{{ r.birthday | date }}</div>
       </div>
+      <button mat-icon-button color="warn" (click)="removeReminder(r)">
+        <mat-icon>delete</mat-icon>
+      </button>
     </div>
     <button mat-raised-button color="primary" class="back-button" (click)="goBack()">
       Back
+    </button>
+    <button mat-raised-button color="accent" 
+      (click)="goToWishes()">
+      View Wishes
     </button>
   </div>
   <ng-template #empty>

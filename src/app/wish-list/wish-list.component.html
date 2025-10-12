@@ -1,0 +1,45 @@
+<div class="wishes-container">
+  <h2>🎉 Birthday Wishes Collection</h2>
+
+  
+
+  @if (copyMessage) {
+    <p class="copy-message">{{ copyMessage }}</p>
+  }
+
+  @for (wish of wishes; track wish) {
+    <div class="wish-card">
+      "{{ wish }}"
+      <button mat-icon-button (click)="copyWish(wish)" class="copy-btn" title="Copy to clipboard">
+        <mat-icon>content_copy</mat-icon>
+      </button>
+    </div>
+  }
+
+  @empty {
+    <p>No wishes added yet.</p>
+  }
+
+  <mat-form-field appearance="outline" class="wish-input">
+    <mat-label>Add your own wish</mat-label>
+    <input matInput [(ngModel)]="newWish" placeholder="Write something nice..." />
+  </mat-form-field>
+
+  <button 
+    mat-raised-button color="primary" 
+    class="back-button" 
+    (click)="goBack()"
+  >
+    Back
+  </button>
+
+  <button
+    mat-raised-button
+    color="primary"
+    class="add-wish-button"
+    (click)="addWish()"
+    [disabled]="!newWish.trim()"
+  >
+    Add Wish
+  </button>
+</div>

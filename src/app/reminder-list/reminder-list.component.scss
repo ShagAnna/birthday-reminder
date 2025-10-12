@@ -61,6 +61,17 @@ h2 {
   flex-direction: column;
   gap: 4px;
   word-break: break-word;
+  flex: 1;
+}
+
+.reminder-card button[mat-icon-button] {
+  color: #d32f2f; 
+  transition: color 0.2s ease, transform 0.1s ease;
+}
+
+.reminder-card button[mat-icon-button]:hover {
+  color: #b71c1c;
+  transform: scale(1.05);
 }
 
 .back-button {

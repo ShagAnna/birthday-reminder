@@ -1,0 +1,16 @@
+{
+  "hosting": {
+    "public": "dist/birthday-reminder-2025/browser",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
