@@ -1,4 +1,6 @@
 <div class="reminder-container">
+  <h2 class="page-title">Mark a Day to Remember</h2>
+
   <label class="photo-upload">
     <input type="file" accept="image/*" (change)="onPhotoSelected($event)" hidden>
       <div class="photo-circle">
@@ -22,18 +24,6 @@
     <input matInput [matDatepicker]="picker" [(ngModel)]="birthday">
     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
-  </mat-form-field>
-
-  <mat-form-field appearance="outline" class="date-input">
-    <mat-label>Notification Date</mat-label>
-    <input matInput [matDatepicker]="notifDatePicker" [(ngModel)]="notificationDate">
-    <mat-datepicker-toggle matSuffix [for]="notifDatePicker"></mat-datepicker-toggle>
-    <mat-datepicker #notifDatePicker></mat-datepicker>
-  </mat-form-field>
-  
-  <mat-form-field appearance="outline" class="time-input">
-    <mat-label>Notification Time</mat-label>
-    <input matInput type="time" [(ngModel)]="notificationTime">
   </mat-form-field>
   
   <button mat-raised-button color="primary"
